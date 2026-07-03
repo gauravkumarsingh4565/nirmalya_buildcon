@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import SiteVisitModal from './components/SiteVisitModal';
 import Testimonials from './components/Testimonials';
 import FoundersMessage from './components/FoundersMessage';
+import VideoGallery from './components/VideoGallery';
+import OfficeMap from './components/OfficeMap';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -31,12 +33,14 @@ function App() {
           <>
             <Hero />
             <Projects />
+            <VideoGallery />
             <FoundersMessage />
             <Testimonials />
+            <OfficeMap />
           </>
         );
       case '/about':
-        return <Team />;
+        return <FoundersMessage isPage={true} />;
       case '/services':
       case '/servise':
         return <Services />;
@@ -54,8 +58,10 @@ function App() {
           <>
             <Hero />
             <Projects />
+            <VideoGallery />
             <FoundersMessage />
             <Testimonials />
+            <OfficeMap />
           </>
         );
     }

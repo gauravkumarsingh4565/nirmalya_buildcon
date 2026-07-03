@@ -40,8 +40,7 @@ export default function Hero({ onSearch }) {
 
         {/* Description */}
         <p className="font-secondary text-white/95 text-sm sm:text-lg mb-10 max-w-xl leading-relaxed drop-shadow-sm">
-          We help you find the best property in the most desirable areas.
-        </p>
+          Nirmalya Buildcon Private Limited is a trusted real estate developer in Bhubaneswar with 15+ years of excellence. We create premium villas and apartments that blend quality construction, transparency, and lasting value.        </p>
 
 
       </div>

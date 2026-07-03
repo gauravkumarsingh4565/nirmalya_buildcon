@@ -3,30 +3,30 @@ import { Calendar, BarChart3, TrendingUp, Hammer } from 'lucide-react';
 
 const ongoingProjects = [
   {
-    id: "heights",
-    name: "Nirmalya Heights",
-    overall: 82,
+    id: "kartikeswar",
+    name: "Kartikeswar Nirmalya Enclave",
+    overall: 85,
     completionDate: "Dec 2026",
-    rera: "P52100029384",
+    rera: "Registration Ongoing",
     stages: [
       { name: "Foundation & Excavation", progress: 100 },
       { name: "RCC Structure (Superstructure)", progress: 100 },
-      { name: "Brickwork & Internal Plaster", progress: 85 },
-      { name: "Plumbing, Electrical & HVAC", progress: 70 },
-      { name: "Finishing, Flooring & Paint", progress: 40 }
+      { name: "Brickwork & Internal Plaster", progress: 95 },
+      { name: "Plumbing, Electrical & HVAC", progress: 80 },
+      { name: "Finishing, Flooring & Paint", progress: 50 }
     ]
   },
   {
-    id: "techhub",
-    name: "Nirmalya Tech Hub",
-    overall: 48,
-    completionDate: "Sept 2027",
-    rera: "P12800048293",
+    id: "avenue",
+    name: "Nirmalya Avenue",
+    overall: 15,
+    completionDate: "June 2028",
+    rera: "Registration Ongoing",
     stages: [
-      { name: "Foundation & Excavation", progress: 100 },
-      { name: "RCC Structure (Superstructure)", progress: 75 },
-      { name: "Brickwork & Internal Plaster", progress: 35 },
-      { name: "Plumbing, Electrical & HVAC", progress: 20 },
+      { name: "Foundation & Excavation", progress: 75 },
+      { name: "RCC Structure (Superstructure)", progress: 0 },
+      { name: "Brickwork & Internal Plaster", progress: 0 },
+      { name: "Plumbing, Electrical & HVAC", progress: 0 },
       { name: "Finishing, Flooring & Paint", progress: 0 }
     ]
   }

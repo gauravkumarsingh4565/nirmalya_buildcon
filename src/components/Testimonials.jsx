@@ -30,7 +30,7 @@ const testimonialsData = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 relative overflow-hidden bg-obsidian text-center">
+    <section id="testimonials" className="py-4 relative overflow-hidden bg-obsidian text-center">
       {/* Background Glow */}
       <div className="absolute top-[20%] left-[-10%] w-[400px] h-[400px] rounded-full bg-gold-500/5 blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-[20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-gold-500/5 blur-[120px] pointer-events-none"></div>
