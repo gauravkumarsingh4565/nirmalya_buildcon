@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, Mail, Clock } from 'lucide-react';
 import logoImage from '../assets/logoimage.jpeg';
 
 export default function Navbar({ currentPath }) {
@@ -17,11 +17,58 @@ export default function Navbar({ currentPath }) {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-          ? 'bg-slate-950/80 backdrop-blur-md border-b border-white/5 py-4 shadow-lg shadow-black/25'
-          : 'bg-transparent py-6 border-b border-transparent'
+          ? 'bg-slate-950/95 backdrop-blur-md border-b border-white/5 shadow-lg shadow-black/25'
+          : 'bg-transparent border-b border-transparent'
         }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      {/* Top Highlight Contact Bar */}
+      <div
+        className={`border-b border-white/5 transition-all duration-300 overflow-hidden bg-slate-950/60 ${
+          scrolled ? 'h-8 opacity-100' : 'h-10 opacity-100'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 h-full flex justify-between items-center text-[10px] sm:text-xs text-slate-400 font-secondary">
+          {/* Tagline / Office Hours */}
+          <div className="hidden lg:flex items-center gap-3 animate-fade-in">
+            <span className="inline-flex items-center bg-gold-500/10 text-gold-500 px-2.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider border border-gold-500/20">
+              RERA Certified
+            </span>
+            <span className="flex items-center gap-1.5 text-slate-300">
+              <Clock size={12} className="text-gold-500" />
+              <span>Mon - Sat: 9:30 AM - 6:30 PM</span>
+            </span>
+          </div>
+
+          {/* Tagline for medium screens */}
+          <div className="hidden sm:flex lg:hidden items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse"></span>
+            <span>Bhubaneswar's Trusted Real Estate Brand</span>
+          </div>
+
+          {/* Contact Details */}
+          <div className="flex items-center gap-5 sm:gap-6 w-full sm:w-auto justify-between sm:justify-end">
+            <a
+              href="tel:+918917620801"
+              className="flex items-center gap-1.5 sm:gap-2 text-slate-200 hover:text-gold-500 transition-colors duration-300 group"
+            >
+              <Phone size={13} className="text-gold-500 group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-semibold tracking-wide">+91 8917620801</span>
+            </a>
+            <a
+              href="mailto:nirmalyabuildcon@gmail.com"
+              className="flex items-center gap-1.5 sm:gap-2 text-slate-200 hover:text-gold-500 transition-colors duration-300 group"
+            >
+              <Mail size={13} className="text-gold-500 group-hover:scale-110 transition-transform duration-300" />
+              <span className="font-semibold tracking-wide">nirmalyabuildcon@gmail.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Navbar */}
+      <div className={`max-w-7xl mx-auto px-6 flex justify-between items-center transition-all duration-300 ${
+        scrolled ? 'py-4' : 'py-5'
+      }`}>
         {/* Brand Logo */}
         <a 
           href="/" 
@@ -37,7 +84,7 @@ export default function Navbar({ currentPath }) {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center gap-8">
-          {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => {
+          {['Home', 'About', 'Services', 'Projects', 'Gallery', 'Blog', 'Contact'].map((item) => {
             const itemPath = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
             const isActive = currentPath === itemPath || (item === 'Home' && currentPath === '/home') || (item === 'Home' && currentPath === '/');
             return (
@@ -85,7 +132,7 @@ export default function Navbar({ currentPath }) {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <div className="absolute top-full left-0 w-full bg-slate-950/95 backdrop-blur-lg border-b border-white/5 py-6 px-6 flex flex-col items-center gap-5 z-49 md:hidden shadow-2xl animate-fade-in text-white">
-          {['Home', 'About', 'Services', 'Projects', 'Contact'].map((item) => {
+          {['Home', 'About', 'Services', 'Projects', 'Gallery', 'Blog', 'Contact'].map((item) => {
             const itemPath = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
             const isActive = currentPath === itemPath || (item === 'Home' && currentPath === '/home') || (item === 'Home' && currentPath === '/');
             return (

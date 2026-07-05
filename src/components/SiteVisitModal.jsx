@@ -5,7 +5,7 @@ export default function SiteVisitModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
-    project: 'Nirmalya Heights',
+    project: 'Kartikeswar Nirmalya Enclave',
     date: '',
     time: '10:00 AM - 12:00 PM',
     name: '',
@@ -31,7 +31,7 @@ export default function SiteVisitModal() {
     setStep(1);
     setIsSuccess(false);
     setFormData({
-      project: 'Nirmalya Heights',
+      project: 'Kartikeswar Nirmalya Enclave',
       date: '',
       time: '10:00 AM - 12:00 PM',
       name: '',
@@ -151,10 +151,10 @@ export default function SiteVisitModal() {
                       </label>
                       <div className="grid grid-cols-1 gap-3">
                         {[
-                          { name: "Nirmalya Heights", desc: "Premium 3 & 4 BHK, Kharadi", rera: "P52100029384" },
-                          { name: "Nirmalya Tech Hub", desc: "Corporate Commercial, Salt Lake", rera: "P12800048293" },
-                          { name: "Golden Crest Estates", desc: "Ultra-luxury Smart Villas, Whitefield", rera: "P51800039485" },
-                          { name: "Waterfront Boulevard", desc: "Premium Retail Hub, Kochi", rera: "P13200050293" }
+                          { name: "Kartikeswar Nirmalya Enclave", desc: "3 BHK Premium Flats, Jharpada", rera: "RERA Reg. Ongoing" },
+                          { name: "Nirmalya Avenue", desc: "3 BHK Luxury Flats, Patia", rera: "RERA Reg. Ongoing" },
+                          { name: "Nirmalya Aashray", desc: "3 BHK Elegant Flats, Ekamra", rera: "RERA Applied" },
+                          { name: "Nirmalya Divyabhoomi", desc: "5 BHK Ultra-Luxury Villa, Puri Bypass", rera: "RERA Applied" }
                         ].map((proj) => (
                           <button
                             key={proj.name}

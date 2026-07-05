@@ -12,6 +12,8 @@ import Testimonials from './components/Testimonials';
 import FoundersMessage from './components/FoundersMessage';
 import VideoGallery from './components/VideoGallery';
 import OfficeMap from './components/OfficeMap';
+import Blog from './components/Blog';
+import Gallery from './components/Gallery';
 
 function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -26,6 +28,17 @@ function App() {
   }, []);
 
   const renderContent = () => {
+    if (currentPath === '/blog') {
+      return <Blog />;
+    }
+    if (currentPath.startsWith('/blog/')) {
+      const blogId = currentPath.substring(6);
+      return <Blog blogId={blogId} />;
+    }
+    if (currentPath === '/gallery') {
+      return <Gallery />;
+    }
+
     switch (currentPath) {
       case '/':
       case '/home':

@@ -39,16 +39,15 @@ const videos = [
 export default function VideoGallery() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [playingVideoId, setPlayingVideoId] = useState(null);
-  const [isPaused, setIsPaused] = useState(false);
 
   // Autoplay carousel
   useEffect(() => {
-    if (playingVideoId || isPaused) return; // Don't slide if playing or hovered
+    if (playingVideoId) return; // Don't slide if playing
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % videos.length);
-    }, 4500);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [playingVideoId, isPaused]);
+  }, [activeIndex, playingVideoId]);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % videos.length);
@@ -91,8 +90,6 @@ export default function VideoGallery() {
         {/* Carousel Container */}
         <div
           className="relative w-full max-w-6xl mx-auto h-[350px] sm:h-[450px] md:h-[550px] overflow-visible perspective-1000"
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
         >
           {videos.map((video, idx) => {
             const offset = getOffset(idx);

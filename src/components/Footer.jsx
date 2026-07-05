@@ -57,16 +57,18 @@ export default function Footer() {
             {/* Social Links */}
             <div className="flex gap-3">
               {[
-                { icon: Facebook, href: "#" },
+                { icon: Facebook, href: "https://www.facebook.com/share/1D1aBJhYG7/" },
                 { icon: Twitter, href: "#" },
-                { icon: Instagram, href: "#" },
-                { icon: Youtube, href: "#" }
+                { icon: Instagram, href: "https://www.instagram.com/nirmalya__buildcon?igsh=MWQ4MXF1N2FmODU4NQ==" },
+                { icon: Youtube, href: "https://www.youtube.com/@nirmalyabuildconprivatelim8489" }
               ].map((social, idx) => {
                 const Icon = social.icon;
                 return (
                   <a
                     key={idx}
                     href={social.href}
+                    target={social.href !== "#" ? "_blank" : undefined}
+                    rel={social.href !== "#" ? "noopener noreferrer" : undefined}
                     className="w-10 h-10 rounded-full bg-slate-900/60 border border-white/5 flex items-center justify-center text-slate-400 hover:border-gold-500 hover:text-gold-500 hover:bg-slate-900 hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
                   >
                     <Icon size={16} />
@@ -119,6 +121,32 @@ export default function Footer() {
                   className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
                 >
                   About
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/gallery" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.history.pushState({}, '', '/gallery');
+                    window.dispatchEvent(new PopStateEvent('popstate'));
+                  }}
+                  className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
+                >
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/blog" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.history.pushState({}, '', '/blog');
+                    window.dispatchEvent(new PopStateEvent('popstate'));
+                  }}
+                  className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
+                >
+                  Blog
                 </a>
               </li>
               <li>

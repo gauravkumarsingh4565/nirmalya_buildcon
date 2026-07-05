@@ -141,7 +141,6 @@ const projectsData = [
 export default function Projects({ externalFilter, isPage = false }) {
   const [filter, setFilter] = useState('All');
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
   const categories = ['All', 'Apartment', 'Villa / Triplex'];
@@ -175,12 +174,12 @@ export default function Projects({ externalFilter, isPage = false }) {
 
   // Autoplay functionality (only for Carousel/Home view)
   useEffect(() => {
-    if (isPage || isPaused || filteredProjects.length <= 1) return;
+    if (isPage || filteredProjects.length <= 1) return;
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % filteredProjects.length);
-    }, 5000);
+    }, 3000);
     return () => clearInterval(interval);
-  }, [isPaused, activeIndex, filteredProjects.length, isPage]);
+  }, [activeIndex, filteredProjects.length, isPage]);
 
   // Handle scrolling to specific project ID when navigated via hash URL
   useEffect(() => {
@@ -253,7 +252,7 @@ export default function Projects({ externalFilter, isPage = false }) {
   };
 
   return (
-    <section id="projects" className="py-18 relative overflow-hidden bg-obsidian">
+    <section id="projects" className="py-26 relative overflow-hidden bg-obsidian">
       {/* Background Glow */}
       <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
       <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
@@ -278,8 +277,8 @@ export default function Projects({ externalFilter, isPage = false }) {
               key={cat}
               onClick={() => setFilter(cat)}
               className={`px-6 py-2 rounded-full font-primary font-semibold text-sm transition-all duration-300 cursor-pointer ${filter === cat
-                  ? 'bg-gold-500 text-slate-950 shadow-lg shadow-gold-500/25 font-bold'
-                  : 'border border-white/10 bg-slate-900/40 hover:border-gold-500 text-slate-300 hover:text-gold-500 shadow-sm'
+                ? 'bg-gold-500 text-slate-950 shadow-lg shadow-gold-500/25 font-bold'
+                : 'border border-white/10 bg-slate-900/40 hover:border-gold-500 text-slate-300 hover:text-gold-500 shadow-sm'
                 }`}
             >
               {cat}
@@ -312,14 +311,13 @@ export default function Projects({ externalFilter, isPage = false }) {
                       <span className="bg-slate-950/80 backdrop-blur-md text-gold-500 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-md border border-white/5">
                         {proj.category}
                       </span>
-                      <span className={`text-[10px] font-primary font-bold uppercase tracking-widest px-3 py-1 rounded-md shadow-sm text-white ${
-                        proj.status === 'Sold'
-                          ? 'bg-rose-600/85 border border-rose-500/20'
-                          : proj.status === 'Completed'
-                            ? 'bg-emerald-500/80 border border-emerald-500/20'
-                            : proj.status === 'Ongoing'
-                              ? 'bg-amber-500/80 border border-amber-500/20'
-                              : 'bg-indigo-500/80 border border-indigo-500/20'
+                      <span className={`text-[10px] font-primary font-bold uppercase tracking-widest px-3 py-1 rounded-md shadow-sm text-white ${proj.status === 'Sold'
+                        ? 'bg-rose-600/85 border border-rose-500/20'
+                        : proj.status === 'Completed'
+                          ? 'bg-emerald-500/80 border border-emerald-500/20'
+                          : proj.status === 'Ongoing'
+                            ? 'bg-amber-500/80 border border-amber-500/20'
+                            : 'bg-indigo-500/80 border border-indigo-500/20'
                         }`}>
                         {proj.status}
                       </span>
@@ -366,7 +364,7 @@ export default function Projects({ externalFilter, isPage = false }) {
                             <span className="text-gold-500 font-primary text-xs font-bold">{proj.progress}%</span>
                           </div>
                           <div className="w-full bg-slate-900 h-2 rounded-full overflow-hidden border border-white/5">
-                            <div 
+                            <div
                               className="bg-gradient-to-r from-gold-500 to-gold-light h-full rounded-full transition-all duration-1000"
                               style={{ width: `${proj.progress}%` }}
                             ></div>
@@ -425,8 +423,6 @@ export default function Projects({ externalFilter, isPage = false }) {
             /* Carousel View for Landing Page: Stage-peeking slider */
             <div
               className="relative w-full py-6 overflow-visible group"
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
               onTouchStart={handleTouchStart}
               onTouchMove={handleTouchMove}
               onTouchEnd={handleTouchEnd}
@@ -488,14 +484,13 @@ export default function Projects({ externalFilter, isPage = false }) {
                             <ShieldCheck size={12} className="text-gold-500" />
                             {proj.rera}
                           </span>
-                          <span className={`inline-flex items-center font-primary font-bold text-[9px] uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-sm text-white ${
-                            proj.status === 'Sold'
-                              ? 'bg-rose-600/85 border border-rose-500/20'
-                              : proj.status === 'Completed'
-                                ? 'bg-emerald-500/80 border border-emerald-500/20'
-                                : proj.status === 'Ongoing'
-                                  ? 'bg-amber-500/80 border border-amber-500/20'
-                                  : 'bg-indigo-500/80 border border-indigo-500/20'
+                          <span className={`inline-flex items-center font-primary font-bold text-[9px] uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-sm text-white ${proj.status === 'Sold'
+                            ? 'bg-rose-600/85 border border-rose-500/20'
+                            : proj.status === 'Completed'
+                              ? 'bg-emerald-500/80 border border-emerald-500/20'
+                              : proj.status === 'Ongoing'
+                                ? 'bg-amber-500/80 border border-amber-500/20'
+                                : 'bg-indigo-500/80 border border-indigo-500/20'
                             }`}>
                             {proj.status}
                           </span>
@@ -524,7 +519,7 @@ export default function Projects({ externalFilter, isPage = false }) {
                               <span className="text-gold-500 font-primary text-xs font-bold">{proj.progress}%</span>
                             </div>
                             <div className="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
-                              <div 
+                              <div
                                 className="bg-gradient-to-r from-gold-500 to-gold-light h-full rounded-full"
                                 style={{ width: `${proj.progress}%` }}
                               ></div>
@@ -592,8 +587,8 @@ export default function Projects({ externalFilter, isPage = false }) {
                       key={idx}
                       onClick={() => setActiveIndex(idx)}
                       className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${idx === activeIndex
-                          ? 'w-8 bg-gold-500 shadow-md shadow-gold-500/20'
-                          : 'w-2 bg-white/40 hover:bg-white/70'
+                        ? 'w-8 bg-gold-500 shadow-md shadow-gold-500/20'
+                        : 'w-2 bg-white/40 hover:bg-white/70'
                         }`}
                       aria-label={`Go to slide ${idx + 1}`}
                     />
