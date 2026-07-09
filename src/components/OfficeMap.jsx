@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock, Navigation, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail, Navigation, ExternalLink } from 'lucide-react';
 
 export default function OfficeMap() {
   const address = "3rd Floor, Nirmalya Signature chowk, Plot No -2298, near HCG panda care, Jayadev Vihar, Bhubaneswar, Odisha 751013";
@@ -81,19 +81,7 @@ export default function OfficeMap() {
                   </div>
                 </div>
 
-                {/* Working Hours */}
-                <div className="flex gap-4 items-start group">
-                  <div className="w-10 h-10 rounded-xl bg-gold-500/10 text-gold-500 border border-gold-500/15 flex items-center justify-center flex-shrink-0 group-hover:bg-gold-500/20 transition-colors duration-300">
-                    <Clock size={18} />
-                  </div>
-                  <div>
-                    <h4 className="text-white text-[15px] font-semibold font-primary mb-1">Business Hours</h4>
-                    <p className="text-muted text-sm font-secondary font-medium">
-                      Monday – Saturday: 9:00 AM – 6:00 PM
-                      <span className="block text-rose-500/80 mt-0.5 text-xs">Sunday: Closed</span>
-                    </p>
-                  </div>
-                </div>
+                {/* Working Hours removed */}
 
               </div>
             </div>

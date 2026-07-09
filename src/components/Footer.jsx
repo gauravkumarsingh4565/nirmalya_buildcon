@@ -1,16 +1,10 @@
 import React from 'react';
 import { ArrowUp, MapPin, Phone, Mail } from 'lucide-react';
-import logoImage from '../assets/logoimage.jpeg';
+import logoImage from '../assets/logoimage.png';
 
 const Facebook = (props) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-  </svg>
-);
-
-const Twitter = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
   </svg>
 );
 
@@ -35,32 +29,36 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#050508] border-t border-white/5 pt-20 pb-10 relative z-10">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="bg-obsidian relative overflow-hidden z-10 border-t border-white/5 pt-24 pb-8">
+      {/* Background Glows */}
+      <div className="absolute top-0 left-[20%] w-[500px] h-[500px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
+      <div className="absolute bottom-[-20%] right-[-10%] w-[400px] h-[400px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 text-left mb-16">
-
-          {/* Col 1: About/Logo */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            <a href="#" className="flex items-center group self-start">
-              <img
-                src={logoImage}
-                alt="Nirmalya Buildcon Logo"
-                className="h-14 w-auto object-contain bg-white p-1.5 rounded-lg group-hover:scale-105 transition-transform duration-300 shadow-md"
-              />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-20">
+          
+          {/* Brand & Social (Left) */}
+          <div className="lg:col-span-4 flex flex-col gap-8 items-start">
+            <a href="/" className="inline-block group" onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}>
+              <div className="bg-white/5 p-2 rounded-xl border border-white/10 group-hover:border-gold-500/30 transition-colors duration-300 backdrop-blur-sm">
+                <img
+                  src={logoImage}
+                  alt="Nirmalya Buildcon Logo"
+                  className="h-20 md:h-28 w-auto max-w-[250px] md:max-w-[350px] object-contain bg-white px-3 py-2 rounded-xl shadow-md"
+                />
+              </div>
             </a>
-
-            <p className="font-secondary text-sm text-slate-400 leading-relaxed">
-              Nirmalya Buildcon Private Limited is a premium real estate development company based in Bhubaneswar, Odisha, committed to creating well-planned residential plotting projects that combine quality, transparency, and long-term value.
-            </p>
-
-            {/* Social Links */}
-            <div className="flex gap-3">
+            
+            <div className="flex items-center gap-3">
               {[
                 { icon: Facebook, href: "https://www.facebook.com/share/1D1aBJhYG7/" },
-                { icon: Twitter, href: "#" },
                 { icon: Instagram, href: "https://www.instagram.com/nirmalya__buildcon?igsh=MWQ4MXF1N2FmODU4NQ==" },
-                { icon: Youtube, href: "https://www.youtube.com/@nirmalyabuildconprivatelim8489" }
+                { icon: Youtube, href: "https://www.youtube.com/@nirmalyabuildconprivatelim8489" },
               ].map((social, idx) => {
                 const Icon = social.icon;
                 return (
@@ -69,132 +67,79 @@ export default function Footer() {
                     href={social.href}
                     target={social.href !== "#" ? "_blank" : undefined}
                     rel={social.href !== "#" ? "noopener noreferrer" : undefined}
-                    className="w-10 h-10 rounded-full bg-slate-900/60 border border-white/5 flex items-center justify-center text-slate-400 hover:border-gold-500 hover:text-gold-500 hover:bg-slate-900 hover:-translate-y-0.5 transition-all duration-300 shadow-sm"
+                    className="w-11 h-11 rounded-full bg-slate-900/80 border border-white/5 flex items-center justify-center text-slate-400 hover:border-gold-500 hover:text-gold-500 hover:bg-gold-500/10 hover:-translate-y-1 transition-all duration-300 shadow-lg"
                   >
-                    <Icon size={16} />
+                    <Icon size={18} />
                   </a>
                 );
               })}
             </div>
           </div>
 
-          {/* Col 2: Useful Links */}
-          <div className="lg:col-span-3 lg:pl-8">
-            <h4 className="text-white text-lg font-bold font-primary mb-6">
-              Useful Links
+          {/* Quick Links (Middle) */}
+          <div className="lg:col-span-3 lg:pl-10">
+            <h4 className="text-white text-lg font-bold font-primary mb-6 flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-gold-500"></span>
+              Quick Links
             </h4>
-            <ul className="flex flex-col gap-4 font-secondary text-sm">
-              <li>
-                <a 
-                  href="/" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.history.pushState({}, '', '/');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="text-gold-500 font-semibold hover:text-gold-light transition-colors duration-200"
-                >
-                  Home
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/projects" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.history.pushState({}, '', '/projects');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
-                >
-                  Projects
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/about" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.history.pushState({}, '', '/about');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
-                >
-                  About
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/gallery" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.history.pushState({}, '', '/gallery');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
-                >
-                  Gallery
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/blog" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.history.pushState({}, '', '/blog');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a 
-                  href="/contact" 
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.history.pushState({}, '', '/contact');
-                    window.dispatchEvent(new PopStateEvent('popstate'));
-                  }}
-                  className="text-slate-300 hover:text-gold-500 transition-colors duration-200"
-                >
-                  Contact
-                </a>
-              </li>
+            <ul className="flex flex-col gap-4 font-secondary text-[15px]">
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'Projects', path: '/projects' },
+                { name: 'About Us', path: '/about' },
+                { name: 'Gallery', path: '/gallery' },
+                { name: 'Contact', path: '/contact' }
+              ].map((link, idx) => (
+                <li key={idx}>
+                  <a
+                    href={link.path}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      window.history.pushState({}, '', link.path);
+                      window.dispatchEvent(new PopStateEvent('popstate'));
+                      window.scrollTo(0, 0);
+                    }}
+                    className="text-slate-400 hover:text-gold-500 hover:pl-2 transition-all duration-300 flex items-center gap-2 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold-500/50 group-hover:bg-gold-500 transition-colors"></span>
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 3: Contact Us details */}
-          <div className="lg:col-span-4 flex flex-col gap-6 text-left">
-            <h4 className="text-white text-lg font-bold font-primary mb-2">
-              Contact Us
+          {/* Contact Details (Right) */}
+          <div className="lg:col-span-5 lg:pl-8">
+            <h4 className="text-white text-lg font-bold font-primary mb-6 flex items-center gap-3">
+              <span className="w-8 h-[2px] bg-gold-500"></span>
+              Get in Touch
             </h4>
-
-            <div className="flex flex-col gap-5 mt-2">
-              {/* Address */}
-              <div className="flex gap-3 items-start">
-                <MapPin size={18} className="text-gold-500 mt-1 flex-shrink-0" />
-                <p className="text-slate-300 text-sm leading-relaxed font-secondary">
+            
+            <div className="flex flex-col gap-6">
+              <div className="flex gap-4 items-start group">
+                <div className="w-10 h-10 rounded-full bg-slate-900 border border-white/5 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors duration-300 shrink-0">
+                  <MapPin size={18} />
+                </div>
+                <p className="text-slate-300 text-[15px] leading-relaxed font-secondary pt-2 group-hover:text-white transition-colors">
                   3rd Floor, Nirmalya Signature chowk, Plot No -2298, near HCG panda care, Jayadev Vihar, Bhubaneswar, Odisha 751013
                 </p>
               </div>
 
-              {/* Phone */}
-              <div className="flex gap-3 items-center">
-                <Phone size={18} className="text-gold-500 flex-shrink-0" />
-                <p className="text-slate-300 text-sm font-secondary">
-                  8917620801
-                </p>
+              <div className="flex gap-4 items-center group">
+                <div className="w-10 h-10 rounded-full bg-slate-900 border border-white/5 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors duration-300 shrink-0">
+                  <Phone size={18} />
+                </div>
+                <a href="tel:+918917620801" className="text-slate-300 text-[15px] font-secondary group-hover:text-white transition-colors">
+                  +91 8917620801
+                </a>
               </div>
 
-              {/* Email */}
-              <div className="flex gap-3 items-center">
-                <Mail size={18} className="text-gold-500 flex-shrink-0" />
-                <a
-                  href="mailto:nirmalyabuildcon@gmail.com"
-                  className="text-slate-300 hover:text-gold-500 text-sm font-secondary transition-colors font-medium"
-                >
+              <div className="flex gap-4 items-center group">
+                <div className="w-10 h-10 rounded-full bg-slate-900 border border-white/5 flex items-center justify-center text-gold-500 group-hover:bg-gold-500 group-hover:text-obsidian transition-colors duration-300 shrink-0">
+                  <Mail size={18} />
+                </div>
+                <a href="mailto:nirmalyabuildcon@gmail.com" className="text-slate-300 text-[15px] font-secondary group-hover:text-white transition-colors">
                   nirmalyabuildcon@gmail.com
                 </a>
               </div>
@@ -203,17 +148,20 @@ export default function Footer() {
 
         </div>
 
-        {/* Bottom Line */}
-        <div className="border-t border-white/5 pt-8 flex justify-between items-center flex-wrap gap-5">
-          <p className="font-secondary text-xs sm:text-sm text-slate-400">
-            &copy; 2026, Nirmalyabuildcon. All Right Reserved
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="font-secondary text-sm text-slate-500">
+            &copy; {new Date().getFullYear()} <span className="text-gold-500 font-medium">Nirmalya Buildcon</span>. All Rights Reserved.
           </p>
-
+          
           <button
             onClick={scrollToTop}
-            className="w-10 h-10 rounded-full bg-gold-500/10 border border-gold-500/15 text-gold-500 hover:bg-gold-500 hover:text-slate-950 hover:border-transparent hover:-translate-y-0.5 flex items-center justify-center transition-all duration-300 cursor-pointer shadow-md"
+            className="group flex items-center gap-2 text-sm font-secondary font-medium text-slate-400 hover:text-gold-500 transition-colors"
           >
-            <ArrowUp size={20} />
+            Back to top
+            <div className="w-8 h-8 rounded-full bg-slate-900 border border-white/5 flex items-center justify-center group-hover:border-gold-500/50 group-hover:-translate-y-1 transition-all duration-300">
+              <ArrowUp size={16} />
+            </div>
           </button>
         </div>
       </div>

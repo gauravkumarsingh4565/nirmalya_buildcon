@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, ChevronLeft, ChevronRight, Maximize2, Tag, MapPin } from 'lucide-react';
+import SEO from './SEO';
 
 import imgEnclave from '../assets/Kartikeswar_Nirmalya_Enclave.jpeg';
 import imgAashray from '../assets/Nirmalya_Aashray.jpeg';
@@ -10,17 +11,17 @@ import imgComm from '../assets/project_commercial.png';
 import imgResi from '../assets/project_residential.png';
 import imgVilla from '../assets/project_villa.png';
 import imgWater from '../assets/project_waterfront.png';
+import imgPalace from '../assets/nirmalya_Palace1.jpeg';
+import imgSignature from '../assets/Nirmalya_Signature.jpeg';
 
 const galleryItems = [
   { id: 1, title: "Kartikeswar Nirmalya Enclave", category: "Residential", status: "Ongoing", location: "Jayadev Vihar", image: imgEnclave },
   { id: 2, title: "Nirmalya Astoria", category: "Residential", status: "Completed", location: "Patia, Bhubaneswar", image: imgAstoria },
   { id: 3, title: "Nirmalya Avenue", category: "Commercial", status: "Ongoing", location: "Tamando, Bhubaneswar", image: imgAvenue },
   { id: 4, title: "Royal Paradise Villas", category: "Residential", status: "Completed", location: "Hanspal, Bhubaneswar", image: imgRoyal },
-  { id: 5, title: "Nirmalya Aashray", category: "Residential", status: "Completed", location: "Pahal, Bhubaneswar", image: imgAashray },
-  { id: 6, title: "Signature Commercial Hub", category: "Commercial", status: "Ongoing", location: "Cuttack-Puri Road", image: imgComm },
-  { id: 7, title: "Nirmalya Residency", category: "Residential", status: "Completed", location: "Sundarpada, Bhubaneswar", image: imgResi },
-  { id: 8, title: "Elite Waterfront Plots", category: "Residential", status: "Ongoing", location: "Balianta, Bhubaneswar", image: imgWater },
-  { id: 9, title: "Green Meadows Villa Complex", category: "Residential", status: "Ongoing", location: "Chandaka Outskirts", image: imgVilla }
+  { id: 5, title: "Nirmalya Heritage", category: "Residential", status: "Completed", location: "Pahal, Bhubaneswar", image: imgAashray },
+  { id: 6, title: "Nirmalya Palace", category: "Residential", status: "Ongoing", location: "Gadakana, Patia, Bhubaneswar", image: imgPalace },
+  { id: 7, title: "Nirmalya Signature", category: "Residential", status: "Completed", location: "Jayadev Vihar Square, Bhubaneswar", image: imgSignature },
 ];
 
 export default function Gallery() {
@@ -56,13 +57,19 @@ export default function Gallery() {
   };
 
   return (
-    <section className="bg-obsidian min-h-screen pt-28 pb-20 relative overflow-hidden">
-      {/* Background Lighting */}
+    <>
+      <SEO 
+        title="Gallery | Nirmalya Buildcon Pvt Ltd" 
+        description="Take a visual tour of our residential enclave layouts, architectural landmarks, and ongoing structural engineering developments in Bhubaneswar."
+        url="/gallery"
+      />
+      <section className="bg-obsidian min-h-screen pt-28 pb-20 relative overflow-hidden">
+        {/* Background Lighting */}
       <div className="absolute top-[15%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
       <div className="absolute bottom-[15%] right-[-10%] w-[500px] h-[500px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Header Block */}
         <div className="text-center mb-16">
           <span className="text-gold-500 font-primary text-xs font-extrabold uppercase tracking-[0.25em] block mb-3 animate-fade-in-up">
@@ -82,11 +89,10 @@ export default function Gallery() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-5 py-2 rounded-full font-primary font-semibold text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer ${
-                filter === cat
-                  ? 'bg-gold-500 text-slate-950 shadow-lg shadow-gold-500/20 font-bold'
-                  : 'border border-white/10 bg-slate-900/40 hover:border-gold-500 text-slate-300 hover:text-gold-500'
-              }`}
+              className={`px-5 py-2 rounded-full font-primary font-semibold text-xs tracking-wider uppercase transition-all duration-300 cursor-pointer ${filter === cat
+                ? 'bg-gold-500 text-slate-950 shadow-lg shadow-gold-500/20 font-bold'
+                : 'border border-white/10 bg-slate-900/40 hover:border-gold-500 text-slate-300 hover:text-gold-500'
+                }`}
             >
               {cat}
             </button>
@@ -117,17 +123,16 @@ export default function Gallery() {
                   <span className="bg-gold-500 text-obsidian text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded">
                     {item.category}
                   </span>
-                  <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded border text-white ${
-                    item.status === 'Completed' ? 'bg-emerald-500/85 border-emerald-500/10' : 'bg-amber-500/85 border-amber-500/10'
-                  }`}>
+                  <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded border text-white ${item.status === 'Completed' ? 'bg-emerald-500/85 border-emerald-500/10' : 'bg-amber-500/85 border-amber-500/10'
+                    }`}>
                     {item.status}
                   </span>
                 </div>
-                
+
                 <h3 className="font-primary text-lg font-bold text-white mb-1 group-hover:text-gold-500 transition-colors duration-300">
                   {item.title}
                 </h3>
-                
+
                 <div className="flex items-center gap-1.5 text-xs text-slate-400 font-secondary">
                   <MapPin size={13} className="text-gold-500" />
                   <span>{item.location}</span>
@@ -152,7 +157,7 @@ export default function Gallery() {
 
       {/* Lightbox Modal Overlay */}
       {lightboxIndex !== null && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
           onClick={handleCloseLightbox}
         >
@@ -173,7 +178,7 @@ export default function Gallery() {
           </button>
 
           {/* Lightbox Content Container */}
-          <div 
+          <div
             className="relative max-w-5xl w-full h-full max-h-[80vh] flex flex-col justify-center items-center z-10"
             onClick={(e) => e.stopPropagation()}
           >
@@ -182,7 +187,7 @@ export default function Gallery() {
               alt={filteredItems[lightboxIndex].title}
               className="max-w-full max-h-full object-contain rounded-2xl shadow-2xl border border-white/5 animate-scale-in"
             />
-            
+
             {/* Overlay Info Block */}
             <div className="mt-4 text-center max-w-xl">
               <h3 className="font-primary text-xl font-bold text-white mb-1">
@@ -207,6 +212,7 @@ export default function Gallery() {
           </button>
         </div>
       )}
-    </section>
+      </section>
+    </>
   );
 }

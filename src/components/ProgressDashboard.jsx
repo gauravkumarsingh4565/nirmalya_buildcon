@@ -7,7 +7,6 @@ const ongoingProjects = [
     name: "Kartikeswar Nirmalya Enclave",
     overall: 85,
     completionDate: "Dec 2026",
-    rera: "Registration Ongoing",
     stages: [
       { name: "Foundation & Excavation", progress: 100 },
       { name: "RCC Structure (Superstructure)", progress: 100 },
@@ -21,7 +20,6 @@ const ongoingProjects = [
     name: "Nirmalya Avenue",
     overall: 15,
     completionDate: "June 2028",
-    rera: "Registration Ongoing",
     stages: [
       { name: "Foundation & Excavation", progress: 75 },
       { name: "RCC Structure (Superstructure)", progress: 0 },
@@ -95,15 +93,7 @@ export default function ProgressDashboard() {
 
             {/* Overall Quick Stats Card */}
             <div className="bg-slate-900/40 p-6 rounded-2xl border border-white/5 shadow-xl shadow-black/10 flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <div className="bg-gold-500/10 p-2.5 rounded-lg border border-gold-500/15 text-gold-500">
-                  <TrendingUp size={20} />
-                </div>
-                <div>
-                  <h4 className="text-white text-sm font-semibold font-primary">RERA Registered</h4>
-                  <p className="text-muted text-xs font-mono">Reg ID: {activeProject.rera}</p>
-                </div>
-              </div>
+              {/* RERA info removed */}
 
               <div className="flex items-center gap-3">
                 <div className="bg-gold-500/10 p-2.5 rounded-lg border border-gold-500/15 text-gold-500">

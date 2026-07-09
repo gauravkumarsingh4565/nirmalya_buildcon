@@ -151,10 +151,10 @@ export default function SiteVisitModal() {
                       </label>
                       <div className="grid grid-cols-1 gap-3">
                         {[
-                          { name: "Kartikeswar Nirmalya Enclave", desc: "3 BHK Premium Flats, Jharpada", rera: "RERA Reg. Ongoing" },
-                          { name: "Nirmalya Avenue", desc: "3 BHK Luxury Flats, Patia", rera: "RERA Reg. Ongoing" },
-                          { name: "Nirmalya Aashray", desc: "3 BHK Elegant Flats, Ekamra", rera: "RERA Applied" },
-                          { name: "Nirmalya Divyabhoomi", desc: "5 BHK Ultra-Luxury Villa, Puri Bypass", rera: "RERA Applied" }
+                          { name: "Kartikeswar Nirmalya Enclave", desc: "3 BHK Premium Flats, Jharpada" },
+                          { name: "Nirmalya Avenue", desc: "3 BHK Luxury Flats, Patia" },
+                          { name: "Nirmalya Aashray", desc: "3 BHK Elegant Flats, Ekamra" },
+                          { name: "Nirmalya Divyabhoomi", desc: "5 BHK Ultra-Luxury Villa, Puri Bypass" }
                         ].map((proj) => (
                           <button
                             key={proj.name}
@@ -174,9 +174,6 @@ export default function SiteVisitModal() {
                               </h4>
                               <p className="text-xs text-muted mt-1 font-secondary">{proj.desc}</p>
                             </div>
-                            <span className="text-[9px] font-mono text-muted border border-white/10 px-2 py-0.5 rounded">
-                              RERA ID: {proj.rera}
-                            </span>
                           </button>
                         ))}
                       </div>

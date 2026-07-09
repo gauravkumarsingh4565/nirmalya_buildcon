@@ -7,6 +7,7 @@ import bannerWaterfront from '../assets/banner_waterfront.png';
 import projectVilla from '../assets/project_villa.png';
 import projectResidential from '../assets/project_residential.png';
 import heroBuilding from '../assets/hero_building.png';
+import SEO from './SEO';
 
 // Newly added project images
 import imgKartikeswarEnclave from '../assets/Kartikeswar_Nirmalya_Enclave.jpeg';
@@ -14,6 +15,8 @@ import imgAashray from '../assets/Nirmalya_Aashray.jpeg';
 import imgAstoria from '../assets/Nirmalya_Astoria.jpeg';
 import imgAvenue from '../assets/Nirmalya_Avenue.jpeg';
 import imgRoyalParadise from '../assets/Royal_Paradise.jpeg';
+import imgPalace from '../assets/nirmalya_Palace1.jpeg';
+import imgSignature from '../assets/Nirmalya_Signature.jpeg';
 
 const projectsData = [
   {
@@ -25,7 +28,6 @@ const projectsData = [
     status: "Ongoing",
     progress: 85,
     stats: "3 BHK Premium Flats",
-    rera: "RERA Reg. Ongoing",
     price: "₹95 Lakh",
     description: "Situated directly on Jharpada Main Road, Kartikeswar Nirmalya Enclave offers high-end 3 BHK flats under active construction, featuring earthquake-resistant frameworks and modern floor planning.",
     amenities: ["Rooftop Sky Lounge", "Modular Kitchen Layouts", "24/7 Power Backup", "High-speed Passenger Lift", "Solar Common Lighting"]
@@ -40,7 +42,6 @@ const projectsData = [
     progress: 15,
     badge: "Pre-Booking Open",
     stats: "3 BHK Luxury Flats",
-    rera: "RERA Reg. Ongoing",
     price: "₹1.2 Cr",
     description: "Nirmalya Avenue is a premium high-rise development on Patia Station Road. Features advanced blueprint architecture and modern amenity portals. Pre-bookings are now officially open.",
     amenities: ["Gym & Yoga Studio", "Smart Security Portal", "Premium Sanitary Ware", "Visitor Parking Zone", "Internal Intercom System"]
@@ -53,7 +54,6 @@ const projectsData = [
     location: "GGP Colony, Rasulgarh, Bhubaneswar",
     status: "Sold",
     stats: "5 BHK Luxury Triplex Project",
-    rera: "RERA Approved",
     price: "₹2.20 Cr",
     description: "Nirmalya's DB Astoria is a premium residential triplex project located in GGP Colony, Rasulgarh, featuring state-of-the-art RCC construction, spacious living layouts, and luxury fitting profiles.",
     amenities: ["Private Terrace Deck", "24/7 Security Patrol", "Premium Bathroom Fittings", "Heavy-Duty Power Backup", "Dedicated Dual Car Port"]
@@ -66,7 +66,6 @@ const projectsData = [
     location: "Near ITER College, Jagamara, Bhubaneswar",
     status: "Sold",
     stats: "Premium 4 BHK Luxury Flats",
-    rera: "RERA Approved",
     price: "₹1.55 Cr",
     description: "Nirmalya's Royal Paradise offers super-luxury 4 BHK apartments located near ITER College. Engineered with high durability standards, Vastu principles, and elegant imported modular spaces.",
     amenities: ["Vastu-Friendly Layouts", "Fully Equipped Gym", "Multi-Tier Smart Security", "Covered Stilt Parking", "Water Softener System"]
@@ -74,68 +73,39 @@ const projectsData = [
   {
     id: "nirmalya-aashray",
     image: imgAashray,
-    title: "Nirmalya Aashray",
+    title: "Nirmalya Heritage",
     category: "Apartment",
     location: "Near Ekamra College, Bhubaneswar",
     status: "Upcoming",
     stats: "3 BHK Elegant Flats",
-    rera: "RERA Applied",
     price: "Upcoming Project",
     description: "An upcoming premium residential development located near Ekamra College, Bhubaneswar, focusing on smart space optimization, modern features, and strong community layouts.",
     amenities: ["Children's Play Zone", "Modern Passenger Lift", "Spacious Community Hall", "Fire Hydrant Systems", "Full Backup Generator"]
   },
   {
-    id: "sap-signature",
-    image: bannerApartment,
-    title: "Nirmalya's Sap Signature",
+    id: "nirmalya-palace",
+    image: imgPalace,
+    title: "Nirmalya Palace",
     category: "Apartment",
-    location: "Rupali Square, Saheed Nagar, Bhubaneswar",
-    status: "Sold",
-    stats: "3 BHK Flats - Apartment Project",
-    rera: "RERA Approved",
-    price: "Sold Out",
-    description: "A landmark premium apartment project at the highly connected Rupali Square, Saheed Nagar, designed with prime municipal clearance approvals, seismic safety foundations, and high ventilation.",
-    amenities: ["Prime Saheed Nagar Spot", "High-speed Elevator", "Automatic Fire Hydrants", "24/7 Smart CCTV Setup", "Intercom in All Flats"]
+    location: "Gadakana, Patia, Bhubaneswar",
+    status: "Completed",
+    stats: "Premium Apartment Project",
+    price: "On Request",
+    description: "Nirmalya Palace is a premium apartment development located in Gadakana, Patia, Bhubaneswar. Designed for modern living with quality construction and thoughtfully planned spaces.",
+    amenities: ["Modern Passenger Lift", "24/7 Power Backup", "Covered Parking", "Security System", "Common Area Lighting"]
   },
   {
-    id: "green-orchid",
-    image: bannerWaterfront,
-    title: "Nirmalya's Green Orchid",
+    id: "nirmalya-signature",
+    image: imgSignature,
+    title: "Nirmalya Signature",
     category: "Apartment",
-    location: "Near Tata Arena, Kalinga Vihar, Bhubaneswar",
-    status: "Sold",
-    stats: "Premium 3 BHK Elegant Apartments",
-    rera: "RERA Approved",
-    price: "₹1.3 Cr",
-    description: "A premium 3 BHK apartment complex located near Tata Arena, Kalinga Vihar, featuring lush green landscaping designs, energy-efficient grids, and top-tier civil engineering structure.",
-    amenities: ["Lush Landscaped Green", "Exclusive EV Charging Port", "Recreational Clubhouse", "Modern Jogging Track", "Rainwater Harvesting"]
+    location: "Jayadev Vihar Square, Bhubaneswar",
+    status: "Completed",
+    stats: "Premium Residential Apartments",
+    price: "On Request",
+    description: "Nirmalya Signature is a landmark residential project at Jayadev Vihar Square, Bhubaneswar — a completed development that set the standard for premium quality construction and elegant living spaces.",
+    amenities: ["Prime Location", "High-Quality Finishes", "24/7 Security", "Power Backup", "Covered Parking"]
   },
-  {
-    id: "nirmalya-crest",
-    image: bannerVilla,
-    title: "Nirmalya Crest",
-    category: "Villa / Triplex",
-    location: "Phulnakhara, Bhubaneswar",
-    status: "Sold",
-    stats: "4 BHK Premium Luxury Villa",
-    rera: "RERA Approved",
-    price: "₹1.1 Cr",
-    description: "A secure, premium private villa community situated in Phulnakhara, Bhubaneswar, delivering premium individual spaces, high ceiling designs, and independent private lawns.",
-    amenities: ["Private Landscaped Lawn", "Rooftop Party Deck", "Italian Modular Kitchen", "Seismic Zone Structure", "Automated Entrance Portal"]
-  },
-  {
-    id: "nirmalya-divyabhoomi",
-    image: projectVilla,
-    title: "Nirmalya Divyabhoomi",
-    category: "Villa / Triplex",
-    location: "Gudiya Pokhari, Puri bypass, Bhubaneswar",
-    status: "Upcoming",
-    stats: "5 BHK Ultra-Luxury Villa",
-    rera: "RERA Applied",
-    price: "Upcoming Project",
-    description: "An upcoming luxury independent villa development of 5 BHK luxury homes on Puri Bypass, Gudiya Pokhari. Features private swimming pool capabilities and high-end security.",
-    amenities: ["Private Swimming Pool", "Solar Smart Power Grid", "Elite Clubhouse Membership", "Smart Automation Hub", "24/7 Security CCTV & Patrol"]
-  }
 ];
 
 export default function Projects({ externalFilter, isPage = false }) {
@@ -143,7 +113,7 @@ export default function Projects({ externalFilter, isPage = false }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-  const categories = ['All', 'Apartment', 'Villa / Triplex'];
+  const categories = ['All', 'Ongoing', 'Completed'];
 
   // Sync internal tab filter with external search filter changes
   useEffect(() => {
@@ -153,18 +123,24 @@ export default function Projects({ externalFilter, isPage = false }) {
   }, [externalFilter]);
 
   const filteredProjects = projectsData.filter(proj => {
-    // 1. Category check
-    const matchesCategory = filter === 'All' || proj.category === filter;
+    // Status-based filter:
+    // Ongoing tab → status is "Ongoing" or "Upcoming"
+    // Completed tab → status is "Completed" or "Sold"
+    const isOngoing = proj.status === 'Ongoing' || proj.status === 'Upcoming';
+    const isCompleted = proj.status === 'Completed' || proj.status === 'Sold';
+    let matchesFilter = true;
+    if (filter === 'Ongoing') matchesFilter = isOngoing;
+    if (filter === 'Completed') matchesFilter = isCompleted;
 
-    // 2. Location check
+    // 2. Location check (for external search)
     const matchesLocation = !externalFilter || externalFilter.location === 'All' ||
       proj.location.toLowerCase().includes(externalFilter.location.toLowerCase());
 
-    // 3. Status check
+    // 3. Status check (for external search)
     const matchesStatus = !externalFilter || externalFilter.status === 'All' ||
       proj.status === externalFilter.status;
 
-    return matchesCategory && matchesLocation && matchesStatus;
+    return matchesFilter && matchesLocation && matchesStatus;
   });
 
   // Reset active index to 0 when filter changes
@@ -252,8 +228,16 @@ export default function Projects({ externalFilter, isPage = false }) {
   };
 
   return (
-    <section id="projects" className="py-26 relative overflow-hidden bg-obsidian">
-      {/* Background Glow */}
+    <>
+      {isPage && (
+        <SEO 
+          title="Our Projects | Nirmalya Buildcon Pvt Ltd" 
+          description="Explore the ongoing and completed real estate projects by Nirmalya Buildcon in Bhubaneswar. We deliver quality apartments, premium villas, and commercial spaces."
+          url="/projects"
+        />
+      )}
+      <section id="projects" className="py-26 relative overflow-hidden bg-obsidian">
+        {/* Background Glow */}
       <div className="absolute top-[20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
       <div className="absolute bottom-[20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-gold-500/5 blur-[150px] pointer-events-none"></div>
 
@@ -261,12 +245,18 @@ export default function Projects({ externalFilter, isPage = false }) {
         <div className="text-center mb-16">
           <span className="text-gold-500 font-primary text-xs font-extrabold uppercase tracking-[0.25em] block mb-3">Our Projects</span>
           <h2 className="font-primary font-bold text-3xl sm:text-4xl text-white mb-4 relative inline-block">
-            {isPage ? "All Developments" : "Featured Projects"}
+            {isPage
+              ? (filter === 'All' ? 'All Projects' : filter === 'Ongoing' ? 'Ongoing Developments' : 'Completed Projects')
+              : 'Featured Projects'}
             <span className="block w-16 h-1 bg-gold-500 mx-auto mt-4 rounded-full"></span>
           </h2>
 
           <p className="font-secondary text-muted text-base max-w-xl mx-auto mt-4">
-            Explore our signature developments. Glide through our premium luxury villas, upscale apartments, and grade-A commercial complexes.
+            {filter === 'All'
+              ? 'Explore our complete portfolio of ongoing developments and successfully delivered projects.'
+              : filter === 'Ongoing'
+                ? 'Projects currently under active construction — live milestones, real-time progress.'
+                : 'Successfully delivered projects that reflect our commitment to quality and excellence.'}
           </p>
         </div>
 
@@ -328,10 +318,7 @@ export default function Projects({ externalFilter, isPage = false }) {
                       )}
                     </div>
 
-                    {/* RERA Badge */}
-                    <div className="absolute bottom-4 right-4 bg-slate-950/80 backdrop-blur-md border border-white/5 text-white/90 font-mono text-[9px] tracking-wide px-3 py-1 rounded-md">
-                      {proj.rera}
-                    </div>
+                    {/* RERA Badge removed */}
                   </div>
 
                   {/* Project Details */}
@@ -480,10 +467,7 @@ export default function Projects({ externalFilter, isPage = false }) {
 
                         {/* Badges */}
                         <div className="flex flex-wrap items-center gap-3 mb-6">
-                          <span className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-md border border-white/10 text-white/90 font-mono text-[10px] tracking-wide px-3.5 py-1.5 rounded-full shadow-sm">
-                            <ShieldCheck size={12} className="text-gold-500" />
-                            {proj.rera}
-                          </span>
+                          {/* RERA badge removed */}
                           <span className={`inline-flex items-center font-primary font-bold text-[9px] uppercase tracking-widest px-3.5 py-1.5 rounded-full shadow-sm text-white ${proj.status === 'Sold'
                             ? 'bg-rose-600/85 border border-rose-500/20'
                             : proj.status === 'Completed'
@@ -622,6 +606,7 @@ export default function Projects({ externalFilter, isPage = false }) {
           </div>
         )}
       </div>
-    </section>
+      </section>
+    </>
   );
 }

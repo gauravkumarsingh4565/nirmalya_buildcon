@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Services from './components/Services';
+// import Services from './components/Services';
 import Projects from './components/Projects';
 import ProgressDashboard from './components/ProgressDashboard';
 import Team from './components/Team';
@@ -12,7 +12,7 @@ import Testimonials from './components/Testimonials';
 import FoundersMessage from './components/FoundersMessage';
 import VideoGallery from './components/VideoGallery';
 import OfficeMap from './components/OfficeMap';
-import Blog from './components/Blog';
+// import Blog from './components/Blog';
 import Gallery from './components/Gallery';
 
 function App() {
@@ -28,13 +28,13 @@ function App() {
   }, []);
 
   const renderContent = () => {
-    if (currentPath === '/blog') {
-      return <Blog />;
-    }
-    if (currentPath.startsWith('/blog/')) {
-      const blogId = currentPath.substring(6);
-      return <Blog blogId={blogId} />;
-    }
+    // if (currentPath === '/blog') {
+    //   return <Blog />;
+    // }
+    // if (currentPath.startsWith('/blog/')) {
+    //   const blogId = currentPath.substring(6);
+    //   return <Blog blogId={blogId} />;
+    // }
     if (currentPath === '/gallery') {
       return <Gallery />;
     }
@@ -54,9 +54,9 @@ function App() {
         );
       case '/about':
         return <FoundersMessage isPage={true} />;
-      case '/services':
-      case '/servise':
-        return <Services />;
+      // case '/services':
+      // case '/servise':
+      //   return <Services />;
       case '/projects':
         return (
           <>
